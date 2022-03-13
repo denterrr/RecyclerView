@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?android:selectableItemBackground">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/photoImageView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_user_avatar"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userNameTextView"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="John Smith"
+        app:layout_constraintTop_toTopOf="@id/photoImageView"
+        app:layout_constraintStart_toEndOf="@id/photoImageView"
+        app:layout_constraintEnd_toStartOf="@id/moreImageView"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userCompanyTextView"
+        android:textSize="14sp"
+        android:textColor="#535252"
+        android:layout_marginTop="4dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="Google"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView"
+        app:layout_constraintStart_toStartOf="@id/userNameTextView"
+        app:layout_constraintEnd_toStartOf="@id/moreImageView"
+        />
+
+    <ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:id="@+id/moreImageView"
+        android:padding="6dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="6dp"
+    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:src="@drawable/ic_more"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/barrier"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="photoImageView,userCompanyTextView"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
